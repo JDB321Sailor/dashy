@@ -83,7 +83,12 @@ export default {
       if (!allTiles) {
         return [];
       }
-      return allTiles.filter((tile) => checkItemVisibility(tile));
+      return allTiles.filter((tile) => {
+        // Check user visibility and also check if item should be hidden from workspace
+        const isVisible = checkItemVisibility(tile);
+        const hideFromWorkspace = tile.displayData?.hideFromWorkspace || false;
+        return isVisible && !hideFromWorkspace;
+      });
     },
   },
   mounted() {
