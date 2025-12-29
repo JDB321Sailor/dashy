@@ -36,8 +36,6 @@ sections:
     description: See how others are using Dashy
     url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
     icon: far fa-grin-hearts
-    displayData:
-      hideFromWorkspace: true
   - title: Config Guide
     description: See full list of configuration options
     url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
