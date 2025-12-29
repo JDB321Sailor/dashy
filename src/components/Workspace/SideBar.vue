@@ -59,6 +59,17 @@ export default {
       });
     },
   },
+  watch: {
+    /* Update isOpen array when filtered sections change */
+    filteredSections(newSections) {
+      // Resize isOpen array if needed
+      const currentLength = this.isOpen.length;
+      const newLength = newSections.length;
+      if (newLength !== currentLength) {
+        this.isOpen = new Array(newLength).fill(false);
+      }
+    },
+  },
   components: {
     SideBarItem,
     SideBarSection,
