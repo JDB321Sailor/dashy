@@ -6,8 +6,10 @@ import Defaults, { localStorageKeys, iconCdns } from '@/utils/defaults';
 import Keys from '@/utils/StoreMutations';
 import { searchTiles } from '@/utils/Search';
 import { checkItemVisibility } from '@/utils/CheckItemVisibility';
+import ThemingMixin from '@/mixins/ThemingMixin';
 
 const HomeMixin = {
+  mixins: [ThemingMixin],
   props: {
     subPageInfo: Object,
   },
@@ -73,9 +75,7 @@ const HomeMixin = {
       }
     },
     setTheme() {
-      // const theme = this.getSubPageTheme() || GetTheme();
-      // ApplyLocalTheme(theme);
-      // ApplyCustomVariables(theme);
+      this.initializeTheme();
     },
     updateModalVisibility(modalState) {
       this.$store.commit('SET_MODAL_OPEN', modalState);
